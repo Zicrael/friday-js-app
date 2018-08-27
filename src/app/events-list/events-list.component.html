@@ -1,0 +1,30 @@
+<section class='event-list-section'>
+  <div class="container-fluid">
+      <div class="event-list-section-title text-center mb-3">
+          <h2>
+              Наши события
+          </h2>
+        </div>
+      <div class="row" *ngIf="eventsList; else loading">
+          <div class="event-list-item col-12 col-sm-6 col-md-4 mb-4" *ngFor="let eventItem of eventsList">
+            <div class="w-100 h-100 event-list-item-content">
+              <img [src]='eventItem.photos[1]' [alt]='eventItem.title' class='img-fluid'>
+              <div class="event-list-item-info">
+                <div class="event-list-item-title">
+                  {{eventItem.title}}
+                </div>
+                <div class="event-list-item-date">
+                    {{eventItem.date}}
+                </div>
+              </div>
+              <div class="event-list-item-show-more">
+                <a class='h-100 w-100 d-flex align-items-center justify-content-center' [routerLink]="['/events-list/view/', eventItem.id]">подробнее</a>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+</section>
+<ng-template #loading>
+  <app-preloader></app-preloader>
+</ng-template>

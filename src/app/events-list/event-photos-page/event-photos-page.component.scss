@@ -1,0 +1,30 @@
+.item-photos-section {
+    padding: 3rem 0;
+    .item-photos {
+        .item-photos-content {
+            position: relative;
+            cursor: pointer;
+            .item-photos-show-more > a {
+                background-color: rgba(250,216,73, 0.9);
+                opacity: 0;
+                transition: opacity 0.25s ease-in-out;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                color: #fff;
+                font-size: 18px;
+                font-family: sans-serif;
+                text-transform: uppercase;
+                text-shadow: 1px 1px 1px #000;
+                text-decoration: none;
+            }
+            &:hover {
+                .item-photos-show-more > a {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+<section class='event-item-section' *ngIf="eventItem; else loading">
+  <div class="container">
+      <div class="row">
+        <div class="col-12 event-item-section-title mb-3">
+          <h2>
+              {{ eventItem.title }}
+          </h2>
+        </div>
+        <div class="col-12 event-item-section-desc mb-2">
+          <p>
+           {{ eventItem.date }}
+          </p>
+        </div>
+        <div class="col-12 event-item-section-topics mb-3">
+          <h3 class="mb-3">
+            Темы:
+          </h3> 
+          <div class="topic-item p-3" *ngFor="let topic of eventItem.topics">
+            <div class="topic-item-title">
+              <h4>{{topic.title}}</h4>  
+            </div>
+            <div class="topic-item-speacker">
+               <h5>{{topic.speaker}}</h5> 
+            </div>
+            <div class="topic-item-slides">
+              <span class='mr-2'>Слайды:</span> <a href={{topic.slides}}>Презентация</a>  
+            </div>
+            <div class="topic-item-video">
+              <span class='mr-2'>Видео:</span> <a href={{topic.video}}>Ссылка</a>  
+            </div>
+          </div>
+        </div>
+        <div class="event-item-section-photos">
+            <div class="event-item-photo col-12 col-sm-6 col-md-4 mb-4">
+                <div class="w-100 h-100 event-item-photo-content">
+                  <img [src]='eventItem.photos[1]' [alt]='eventItem.title' class='img-fluid'>
+                  <div class="event-item-photo-show-more">
+                    <a class='h-100 w-100 d-flex align-items-center justify-content-center' [routerLink]="['/events-list/photos/', eventItem.id]">Полный список</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+  </div>
+</section>
+<ng-template #loading>
+  <app-preloader></app-preloader>
+</ng-template>
