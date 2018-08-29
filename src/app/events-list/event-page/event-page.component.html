@@ -15,34 +15,40 @@
           <h3 class="mb-3">
             Темы:
           </h3> 
-          <div class="topic-item p-3" *ngFor="let topic of eventItem.topics">
-            <div class="topic-item-title">
-              <h4>{{topic.title}}</h4>  
+          <div class="topic-item d-flex p-3 align-items-center" *ngFor="let topic of eventItem.topics">
+            <div class='topic-image mr-3 d-none d-md-block'>
+              <img [src]='topic.speakerPhoto' [alt]='topic.speaker' class='w-100 h-100'>
             </div>
-            <div class="topic-item-speacker">
-               <h5>{{topic.speaker}}</h5> 
-            </div>
-            <div class="topic-item-slides">
-              <span class='mr-2'>Слайды:</span> <a href={{topic.slides}}>Презентация</a>  
-            </div>
-            <div class="topic-item-video">
-              <span class='mr-2'>Видео:</span> <a href={{topic.video}}>Ссылка</a>  
+            <div class='topic-content'>
+                <div class="topic-item-title">
+                    <h4>{{topic.title}}</h4>  
+                  </div>
+                  <div class="topic-item-speacker">
+                     <h5>{{topic.speaker}}</h5> 
+                  </div>
+                  <div class="topic-item-slides">
+                    <span class='mr-2'>Слайды:</span> <a href={{topic.slides}}>Презентация</a>  
+                  </div>
+                  <div class="topic-item-video">
+                    <span class='mr-2'>Видео:</span> <a href={{topic.video}}>Ссылка</a>  
+                  </div>
             </div>
           </div>
         </div>
-        <div class="event-item-section-photos">
-            <div class="event-item-photo col-12 col-sm-6 col-md-4 mb-4">
-                <div class="w-100 h-100 event-item-photo-content">
-                  <img [src]='eventItem.photos[1]' [alt]='eventItem.title' class='img-fluid'>
-                  <div class="event-item-photo-show-more">
-                    <a class='h-100 w-100 d-flex align-items-center justify-content-center' [routerLink]="['/events-list/photos/', eventItem.id]">Полный список</a>
-                  </div>
-                </div>
+      </div>
+      <div class="event-item-section-photos row">
+          <div class="event-item-photo col-12 col-sm-6 col-md-4 mb-4" *ngFor="let photo of eventItem.photos">
+            <div class="w-100 h-100 event-item-photo-content">
+              <img [src]='photo.link' [alt]='eventItem.title' class='img-fluid'>
+              <div class="event-item-photo-show-more">
+                <a class='h-100 w-100 d-flex align-items-center justify-content-center' [routerLink]="['./photos', photo.id]">Увеличить</a>
               </div>
+            </div>
+          </div>
         </div>
       </div>
-  </div>
 </section>
 <ng-template #loading>
   <app-preloader></app-preloader>
 </ng-template>
+<router-outlet></router-outlet>

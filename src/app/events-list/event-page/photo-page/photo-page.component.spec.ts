@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EventPhotosPageComponent } from './event-photos-page.component';
+import { PhotoPageComponent } from './photo-page.component';
 
-describe('EventPhotosPageComponent', () => {
-  let component: EventPhotosPageComponent;
-  let fixture: ComponentFixture<EventPhotosPageComponent>;
+describe('PhotoPageComponent', () => {
+  let component: PhotoPageComponent;
+  let fixture: ComponentFixture<PhotoPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EventPhotosPageComponent ]
+      declarations: [ PhotoPageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EventPhotosPageComponent);
+    fixture = TestBed.createComponent(PhotoPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

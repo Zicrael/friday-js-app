@@ -4,16 +4,13 @@ import { EventsListRouterModule } from './events-list.router.module';
 import { PreloaderModule } from '../ui/preloader/preloader.module';
 import {  EventsListComponent } from './events-list.component';
 import { EventPageComponent } from './event-page/event-page.component';
-import { EventPhotosPageComponent } from './event-photos-page/event-photos-page.component';
-import { ModalPhotoModule } from '../ui/modal-photo/modal-photo.module';
-
+import { PhotoPageComponent } from './event-page/photo-page/photo-page.component';
 @NgModule({
   imports: [
     CommonModule,
     EventsListRouterModule,
-    PreloaderModule,
-    ModalPhotoModule
+    PreloaderModule
   ],
-  declarations: [EventsListComponent, EventPageComponent, EventPhotosPageComponent]
+  declarations: [EventsListComponent, EventPageComponent, PhotoPageComponent]
 })
 export class EventsListModule { }

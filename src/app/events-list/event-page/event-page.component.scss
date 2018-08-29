@@ -5,6 +5,11 @@
     }
     .topic-item {
        border-left: 2px solid rgb(250,216,73);
+       display: flex;
+       & .topic-image {
+           height: 130px;
+           width: 170px;
+       }
        & .topic-item-slides {
            font-size: 18px;
        }
