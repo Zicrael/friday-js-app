@@ -4,17 +4,22 @@
         font-size: 18px;
     }
     .topic-item {
-       border-left: 2px solid rgb(250,216,73);
        display: flex;
-       & .topic-image {
-           height: 130px;
-           width: 170px;
+       & .topic-image-wrapper {
+           height: 125px;
+           width: 125px;
+           & .topic-image-title {
+               box-shadow: 3px 3px 5px #ccc;
+               background-position: center;
+               background-size: cover;
+           }
        }
-       & .topic-item-slides {
+       & .topic-item-info {
            font-size: 18px;
-       }
-       & .topic-item-video {
-        font-size: 18px;
+           & .topic-links {
+               color: #26a0de;
+               text-decoration: none;
+           }
        }
     }
     .event-item-photo {
@@ -43,5 +48,11 @@
                 }
             }
         }
+    }
+}
+
+@media(max-width: 768px) {
+    .topic-item {
+        border-left: 2px solid rgb(250,216,73);
     }
 }

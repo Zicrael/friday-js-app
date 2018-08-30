@@ -20,6 +20,7 @@ export class EventPageComponent implements OnInit {
         this.eventsService.eventById(params.id).subscribe(
           (data: EventItemModel) => {
             this.eventItem = data;
+            this.eventsService.activeEvent.next(data);
           }, (error) => {
             console.log(error);
           }

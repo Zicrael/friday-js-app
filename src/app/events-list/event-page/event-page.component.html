@@ -16,8 +16,8 @@
             Темы:
           </h3> 
           <div class="topic-item d-flex p-3 align-items-center" *ngFor="let topic of eventItem.topics">
-            <div class='topic-image mr-3 d-none d-md-block'>
-              <img [src]='topic.speakerPhoto' [alt]='topic.speaker' class='w-100 h-100'>
+            <div class='topic-image-wrapper mr-3 d-none d-md-block'>
+              <div class="topic-image-title h-100" [style.background-image]="'url('+topic.speakerPhoto+')'"></div>
             </div>
             <div class='topic-content'>
                 <div class="topic-item-title">
@@ -26,17 +26,19 @@
                   <div class="topic-item-speacker">
                      <h5>{{topic.speaker}}</h5> 
                   </div>
-                  <div class="topic-item-slides">
-                    <span class='mr-2'>Слайды:</span> <a href={{topic.slides}}>Презентация</a>  
-                  </div>
-                  <div class="topic-item-video">
-                    <span class='mr-2'>Видео:</span> <a href={{topic.video}}>Ссылка</a>  
+                  <div class="topic-item-info">
+                    <a href={{topic.slides}} class='topic-links' target="_blank">Слайды</a> <span class='px-2'>&middot;</span><a href={{topic.video}} target="_blank" class='topic-links'>Видео</a>  
                   </div>
             </div>
           </div>
         </div>
       </div>
       <div class="event-item-section-photos row">
+        <div class="col-12">
+            <h3 class="mb-3">
+              Фото:
+            </h3> 
+        </div>
           <div class="event-item-photo col-12 col-sm-6 col-md-4 mb-4" *ngFor="let photo of eventItem.photos">
             <div class="w-100 h-100 event-item-photo-content">
               <img [src]='photo.link' [alt]='eventItem.title' class='img-fluid'>

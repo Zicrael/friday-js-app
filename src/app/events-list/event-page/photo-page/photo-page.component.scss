@@ -12,13 +12,20 @@
     & .photo-wrapper {
         max-width: 90%;
         cursor: default;
+        position: relative;
     }
     & .close-modal-view {
         position: absolute;
         top: 20px;
         right: 20px;
         cursor: pointer;
-        color: #fff;
-        font-size: 42px;
+        font-size: 3rem;
+        display: flex;
+            color: #fff;
+            opacity: 0.5;
+            transition: all .15s ease-in-out;
+            &:hover {
+                opacity: 1;
+            }
     }
 }
