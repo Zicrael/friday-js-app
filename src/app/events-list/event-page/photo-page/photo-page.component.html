@@ -1,7 +1,7 @@
 <section class="modal-view-photo-section" *ngIf="selectedPhoto">
     <div class='modal-view-photo' (click)='closePhotoView($event)'>
-      <div class="photo-wrapper">
-          <img [src]="selectedPhoto.link" alt="selected photo" class='w-100 h-100'>
+        <div class="photo-wrapper" [style.background-image]="'url('+selectedPhoto.link+')'">
+            <!-- <img [src]="selectedPhoto.link" alt="selected photo" class='h-100 w-100'> -->
         </div>
         <div class="close-modal-view">
             &times;
